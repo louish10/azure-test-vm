@@ -1,0 +1,10 @@
+---
+- name: Start VM
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Start VM
+      azure_rm_virtualmachine:
+        resource_group: MyResourceGroup
+        name: myVM
+        started: yes

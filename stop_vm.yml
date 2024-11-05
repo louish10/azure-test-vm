@@ -1,0 +1,10 @@
+---
+- name: Stop Azure VM
+  hosts: localhost
+  connection: local
+  tasks:
+    - name: Stop VM
+      azure_rm_virtualmachine:
+        resource_group: MyResourceGroup
+        name: myVM
+        allocated: no
