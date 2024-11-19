@@ -1,0 +1,17 @@
+---
+
+- name: Manage users
+  hosts: vm
+  remote_user: azureuser
+  become: yes
+  tasks:
+    - name: Create test user
+      ansible.builtin.user:
+        name: testuser
+        comment: Test user
+    - name: Add ssh key
+      ansible.posix.authorized_key:
+        user: testuser
+        key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDJrGOX6d47ACP3fhRDtUNU8/8VJjIraXVdBhLkng/D4esI5+gRxjxrUKx5xhD/sqbZ1G9qAZYTNK/xUkwY7bUbKmpFfAs2iJjxk/nO1WhqKIGoFoXd+nFFIJA/AlSEpefOI/Lac401OkqWQT03x3TdC9q+yBGRsYcDzL69JcpJ79f/Jkofx+akk9hpK71LfIY2sK6glj3OYmFIdkrUXKf2gjEPc7/DLHp1KwNcZO52c5Flf71Y9ivmELFqLbFQLew+If2ovgisH4XGTIkpkswGD38atEOaU5Mj9GrCkNhNmpCWM+iM8HUMZJXOKrNDLye55y5OQLp/uLYofDpeWGt2DIe783vrd/KEdX3lDe8YCDst9rcJwQ1z7hNb9D8F+EPkK+RvPFB1TWYqEChWiirKwb0CV+Zt2CfAT+M7rDagqQZe5MtACPkKg69UNe1nuxy39JgBrMZK4j45hOztam8AX7BoDlCRWbhqDzYH1OfvgC5D+mHt/BIG4DRzskrf6ik= 40019142
+
+...
